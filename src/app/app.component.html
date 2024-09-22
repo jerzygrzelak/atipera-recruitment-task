@@ -1,4 +1,20 @@
-<h1>elo</h1>
+<main>
+  <h4>Periodic table. Literally.</h4>
+  <mat-form-field class="example-full-width">
+    <mat-label>Filter by any value</mat-label>
+    <input matInput placeholder="Ex. Helium" (input)="onFilterChange($event)">
+  </mat-form-field>
 
+  <ng-container *ngIf="(loading$ | async); else table">
+    <app-elements-table-skeleton></app-elements-table-skeleton>
+  </ng-container>
+
+  <ng-template #table>
+    <ng-container *ngIf="(filteredElements$ | async) as elements">
+      <app-elements-table [dataSource]="elements"/>
+    </ng-container>
+  </ng-template>
+
+</main>
 
 <router-outlet />

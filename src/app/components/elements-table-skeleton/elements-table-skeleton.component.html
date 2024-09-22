@@ -1,0 +1,40 @@
+<table [dataSource]="emptyDataSource" class="mat-elevation-z8" mat-table>
+  <ng-container matColumnDef="position">
+    <th *matHeaderCellDef mat-header-cell>Position</th>
+    <td *matCellDef="let element" mat-cell>
+      <ngx-skeleton-loader/>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th *matHeaderCellDef mat-header-cell>Name</th>
+    <td *matCellDef="let element" mat-cell>
+      <ngx-skeleton-loader/>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="weight">
+    <th *matHeaderCellDef mat-header-cell>Weight</th>
+    <td *matCellDef="let element" mat-cell>
+      <ngx-skeleton-loader/>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="symbol">
+    <th *matHeaderCellDef mat-header-cell>Symbol</th>
+    <td *matCellDef="let element" mat-cell>
+      <ngx-skeleton-loader/>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="edit">
+    <th *matHeaderCellDef mat-header-cell></th>
+    <td *matCellDef="let element" mat-cell>
+      <ngx-skeleton-loader/>
+    </td>
+  </ng-container>
+
+  <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+  <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+</table>
+
